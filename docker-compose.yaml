@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  mongo:
+    container_name: mongodb
+    restart: always
+    image: mongo:6.0.3-focal
+    environment:
+      MONGO_INITDB_DATABASE: nest-pokemon
+      # MONGODB_DATABASE: nest-pokemon
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
